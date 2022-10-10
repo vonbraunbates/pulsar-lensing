@@ -1,18 +1,21 @@
-% Find roots of the lens equation
 function x_0 = rootsearch(f,df,d2f,a,b)
 
 eps_ = double(eps('single'));
 d2x0 = []; dx0 = []; x0 = []; x_0 = [];
 options = optimset('FunValCheck','on', ... % f(x0) finite
     'TolFun',eps_/1e1); % tolerance f(x)
-%{ % Plot functions to check:
+
+%%{
+% Plot functions to check:
 xx = linspace(a,b,1e4);
 figure(6); hold all
 plot(xx,zeros(1e4,1),'k-','DisplayName','f = 0','MarkerSize',4)
 plot(xx,d2f(xx),'.','DisplayName','d^2f/dx^2','MarkerSize',4)
 plot(xx,df(xx),'.','DisplayName','df/dx','MarkerSize',4)
 plot(xx,f(xx),'.','DisplayName','f(x)','MarkerSize',4)
-axis([a b -10 10]); legend('show','Location','Best');%}
+axis([a b -10 10]); legend('show','Location','Best');
+%}
+    
 % find where d2f/dx2 changes sign:
 if (sign(d2f(a)) ~= sign(d2f(b)))
     d2x0 = fzero(d2f,[a b],options);
@@ -43,7 +46,8 @@ for i = 2:length(rangeint)
             int = [rangeint(i-1) rangeint(i) + eps_];
             dx0(i-1) = fzero(df,int,options);
         end
-    elseif(sign(df(rangeint(i-1))) ~= sign(df(rangeint(i)))) % f continuous over int
+    elseif(sign(df(rangeint(i-1))) ~= sign(df(rangeint(i))))
+        % f continuous over int
         int = rangeint(i-1:i);
         dx0(i-1) = fzero(df,int,options);
     else % df is undefined at a or b
@@ -71,7 +75,8 @@ for i = 2:length(rangeint)
         elseif (sign(f(rangeint(i-1))) ~= sign(f(rangeint(i) + eps_))) 
             int = [rangeint(i-1) rangeint(i) + eps_];
         end
-    elseif(sign(f(rangeint(i-1))) ~= sign(f(rangeint(i)))) % f continuous over int
+    elseif(sign(f(rangeint(i-1))) ~= sign(f(rangeint(i)))) 
+        % f continuous over int
         int = rangeint(i-1:i);
     end
     % Now find root within modified interval
@@ -84,7 +89,7 @@ for i = 2:length(rangeint)
         x0(i-1) = NaN;
         end
     catch
-        disp('FZERO error.')
+        % disp('FZERO error.')
     end; % try
 end
 
@@ -97,13 +102,14 @@ if(isempty(x_0));
 else
     x_0 = x_0(logical([1,(diff(x_0) > eps_)'])); % remove elements equal within tol
 end; % if
-%{% The value x returned by fzero is near 
+
+% The value x returned by fzero is near 
 % a point where fun changes sign, 
 % or NaN if the search fails.
 % ONLY a zero if fun is continuous
 % Otherwise a divergent discontinuity.
 
-%plot(x_0,zeros(size(x_0)),'x','DisplayName','zeros')
-%hold off;%}
-end % function
+plot(x_0,zeros(size(x_0)),'x','DisplayName','zeros')
+hold off;
 
+end % function

@@ -1,23 +1,26 @@
 function H = hankel_matrix(ord, R, N, varargin)
-% HANKEL_MATRIX: Generates data to use for Hankel Transforms
-% The algorithm used is that from:
-% 		"Computation of quasi-discrete Hankel transforms of the integer
-% 		order for propagating optical wave fields"
-% 		Manuel Guizar-Sicairos and Julio C. Guitierrez-Vega
-% 		J. Opt. Soc. Am. A 21(1) 53-58 (2004)
-% paper defn: (eqn 1)
-% H[f(r)]   \equiv 2*pi \int dr f(r)J_p(2*pi*kr)r 
-% H-1[F(k)] \equiv 2*pi \int dk F(k)J_p(2*pi*kr)k 
-% RHB defn.:
-% H[f(r)]   \equiv \int dr f(r)J_p(kr)r 
-% H-1[F(k)] \equiv \int dk F(k)J_p(kr)k 
-% scaling:
-% forward:   H[f] = (T * (f.*s_HT.JR) ) ./ s_HT.JV   (eqn 6a)
-% backward: ~H[F] = (T * (F.*s_HT.JV) ) ./ s_HT.JR   (eqn 6b)
-  
+%{
+HANKEL_MATRIX: Generates data to use for Hankel Transforms
+
+	The algorithm used is that from:
+		"Computation of quasi-discrete Hankel transforms of the integer
+		order for propagating optical wave fields"
+		Manuel Guizar-Sicairos and Julio C. Guitierrez-Vega
+		J. Opt. Soc. Am. A 21(1) 53-58 (2004)
+
+paper defn: (eqn 1)
+H[f(r)]   \equiv 2*pi \int dr f(r)J_p(2*pi*kr)r 
+H-1[F(k)] \equiv 2*pi \int dk F(k)J_p(2*pi*kr)k 
+RHB defn.:
+H[f(r)]   \equiv \int dr f(r)J_p(kr)r 
+H-1[F(k)] \equiv \int dk F(k)J_p(kr)k 
+scaling:
+forward:   H[f] = (T * (f.*s_HT.JR) ) ./ s_HT.JV   (eqn 6a)
+backward: ~H[F] = (T * (F.*s_HT.JV) ) ./ s_HT.JR   (eqn 6b)
+%}
 if(~isempty(varargin))
     fhandle1 = figure('visible','on');
-     %fhandle2 = figure('visible','on');
+    %fhandle2 = figure('visible','on');
     % set figure size, visibility
     set(0,'DefaultFigureVisible','off');
     scrsz = get(0,'ScreenSize');
@@ -40,7 +43,7 @@ if(~isempty(varargin))
     
     clear len scrsz ax.min ax.max ax.size ax.box
 end % if
-   
+
 %% Transformation matrix
 if(~isinteger(N)); N = floor(N); end; % int nr of Bessel roots
 %	Calculate N+1 roots:
@@ -51,6 +54,9 @@ c = bessel_zeros('J',ord,N+1);
 J = besselj(ord+1,c(1:N)'); 
 Jn = abs(repmat(J,N,1)); % rows of Jn are copies of J
 % Calculate hankel matrix
+% [b,~,n] = unique(c(1:N)*c(1:N)'/c(N+1));
+% B = besselj(ord,b); clear b
+% bessel = reshape(B(n),[N N]); clear B n
 C = (2/c(N+1))*besselj(ord,(c(1:N)*c(1:N)')/c(N+1))./(Jn.*Jn'); %c*c' = jn.*jm
 clear Jn 
 
@@ -80,8 +86,8 @@ if(~isempty(varargin))
     clear j
     f2(:,3)   = 2*pi*f2(:,1).*f2(:,2); % convolution thm.
     fiht(:,3) = iht(f2(:,3));
-   
-	%% Plotting
+    
+    %% Plotting
     title_str = sprintf('N = %8.0g, R_{max} = %8.0g, N/R = %8.0g',[N,R,N/R])
     
     % actual plots
@@ -93,7 +99,7 @@ if(~isempty(varargin))
     plot(v,f2,'o'), axis tight;
     xlabel('v'), ylabel('F(v)'); 
     
-    mtit(title_str); 
+    mtit(title_str);
 end % if
 
 %% assign to struct
