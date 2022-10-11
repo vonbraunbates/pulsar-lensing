@@ -1,0 +1,17 @@
+Please cite this repository with the accompanying thesis:
+
+@% Optional fields: subtitle, titleaddon, language, howpublished, type, version, note, organization, location, date, month, year, addendum, pubstate, doi, eprint, eprintclass, eprinttype, url, urldate
+@misc{vonbraunbates-pulsar-lensing,
+    author = {Francesca von Braun-Bates},
+    title = {pulsar-lensing (code repository)},
+    year = 2014,
+    url = {https://github.com/vonbraunbates/pulsar-lensing/}
+}
+
+@% Optional fields: subtitle, titleaddon, language, note, location, month, isbn, chapter, pages, pagetotal, addendum, pubstate, doi, eprint, eprintclass, eprinttype, url, urldate, type
+@mastersthesis{vonbraunbates-msc-thesis,
+    author = {Francesca von Braun-Bates},
+    title = {Gravitational lensing of pulsars as a probe of dark matter halos},
+    institution = {University of Sydney},
+    year = 2014
+}
