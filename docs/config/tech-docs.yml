@@ -9,10 +9,11 @@ phase: Beta
 
 # Links to show on right-hand-side of header
 header_links:
-  About: https://www.larry-the-cat.service.gov.uk/about
-  Get Started: https://www.larry-the-cat.service.gov.uk/get-started
+  Code: https://github.com/vonbraunbates/pulsar-lensing/
+  Thesis (arXiv): https://arxiv.org/abs/2210.06151
   Documentation: /
-  Support: https://www.larry-the-cat.service.gov.uk/support
+  References (NASA ADS): https://ui.adsabs.harvard.edu/abs/2022arXiv221006151V/references
+  Citations (INSPIRE-HEP): https://inspirehep.net/literature?sort=mostrecent&size=25&page=1&q=refersto%3Arecid%3A2164729
 
 # Enables search functionality. This indexes pages only and is not recommended for single-page sites.
 enable_search: false
@@ -36,4 +37,4 @@ prevent_indexing: true
 
 show_contribution_banner: true
 github_repo: vonbraunbates/pulsar-lensing
-github_branch: main
+github_branch: documentation
