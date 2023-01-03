@@ -1,6 +1,6 @@
 Please cite this repository with the accompanying thesis:
 
-@% Optional fields: subtitle, titleaddon, language, howpublished, type, version, note, organization, location, date, month, year, addendum, pubstate, doi, eprint, eprintclass, eprinttype, url, urldate
+% Optional fields: subtitle, titleaddon, language, howpublished, type, version, note, organization, location, date, month, year, addendum, pubstate, doi, eprint, eprintclass, eprinttype, url, urldate
 @misc{vonbraunbates-pulsar-lensing,
     author = {Francesca von Braun-Bates},
     title = {pulsar-lensing (code repository)},
@@ -8,10 +8,17 @@ Please cite this repository with the accompanying thesis:
     url = {https://github.com/vonbraunbates/pulsar-lensing/}
 }
 
-@% Optional fields: subtitle, titleaddon, language, note, location, month, isbn, chapter, pages, pagetotal, addendum, pubstate, doi, eprint, eprintclass, eprinttype, url, urldate, type
+% Optional fields: subtitle, titleaddon, language, note, location, month, isbn, chapter, pages, pagetotal, addendum, pubstate, doi, eprint, eprintclass, eprinttype, url, urldate, type
 @mastersthesis{vonbraunbates-msc-thesis,
-    author = {Francesca von Braun-Bates},
-    title = {Gravitational lensing of pulsars as a probe of dark matter halos},
-    institution = {University of Sydney},
-    year = 2014
+       author = {{von Braun-Bates}, Francesca},
+        title = "{Gravitational lensing of pulsars as a probe of dark matter halos}",
+       school = {University of Sydney},
+         year = 2014
+          url = {https://arxiv.org/abs/2210.06151}
+      address = {arXiv:2210.06151},
+archivePrefix = {arXiv},
+       eprint = {2210.06151},
+ primaryClass = {astro-ph.CO},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2022arXiv221006151V},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
