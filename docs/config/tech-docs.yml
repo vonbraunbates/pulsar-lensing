@@ -10,10 +10,10 @@ phase: Beta
 # Links to show on right-hand-side of header
 header_links:
   Code: https://github.com/vonbraunbates/pulsar-lensing/
-  Thesis (arXiv): https://arxiv.org/abs/2210.06151
+  Thesis: https://arxiv.org/abs/2210.06151
   Documentation: /
-  References (NASA ADS): https://ui.adsabs.harvard.edu/abs/2022arXiv221006151V/references
-  Citations (INSPIRE-HEP): https://inspirehep.net/literature?sort=mostrecent&size=25&page=1&q=refersto%3Arecid%3A2164729
+  References: https://ui.adsabs.harvard.edu/abs/2022arXiv221006151V/references
+  Citations: https://inspirehep.net/literature?sort=mostrecent&size=25&page=1&q=refersto%3Arecid%3A2164729
 
 # Enables search functionality. This indexes pages only and is not recommended for single-page sites.
 enable_search: false
