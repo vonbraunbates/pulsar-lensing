@@ -1,3 +1,7 @@
+# Folders for preservation
+reconstruction-log.*
+archive/*
+
 # Prerequisites
 *.d
 
