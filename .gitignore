@@ -1,5 +1,5 @@
 # Folders for preservation
-reconstruction-log.*
+reconstruction_log.*
 archive/*
 
 # Prerequisites
