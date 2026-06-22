@@ -30,3 +30,22 @@
 *.exe
 *.out
 *.app
+
+# tex files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+
+
+# OS files
+.DS_Store
