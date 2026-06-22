@@ -11,16 +11,16 @@ With a valid TeX installation:
 
 You will need the following packages:
 
-%- amssymb
-%- booktabs
-%- cleveref
-%- graphicx
-%- hyperref
-%- lscape
-%- multirow
-%- subcaption
-%- threeparttable
-%- xparse
+- amssymb
+- booktabs
+- cleveref
+- graphicx
+- hyperref
+- lscape
+- multirow
+- subcaption
+- threeparttable
+- xparse
 
 The thesis useds a custom class file based on `amsbook`: if you have difficulties, start with `amsbook` instead.
 
@@ -42,9 +42,6 @@ Please cite the following thesis.  If you are using `biblatex` use the `thesis` 
   institution = {University of Sydney},
   year        = {2014},
   month       = apr,
-%  doi         = {10.5281/zenodo.20764402},
-%  url         = {https://doi.org/10.5281/zenodo.20764401},
-%  note        = {Reconstructed edition available from GitHub}
 }
 ```
 Otherwise use `misc`:
