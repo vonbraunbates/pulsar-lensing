@@ -11,26 +11,7 @@ The results show that low-mass dark matter halos can produce measurable timing a
 
 ## Compilation
 
-With a valid TeX installation:
-
-```sh
-    latexmk -pdf main.tex
-```
-
-You will need the following packages:
-
-- amssymb
-- booktabs
-- cleveref
-- graphicx
-- hyperref
-- lscape
-- multirow
-- subcaption
-- threeparttable
-- xparse
-
-The thesis useds a custom class file based on `amsbook`: if you have difficulties, start with `amsbook` instead.
+Load the files into MATLAB Online.  No Makefile nor compilation is needed.
 
 ## Licence
 
@@ -43,22 +24,15 @@ The source code is licenced under the MIT Licence, as in `./LICENCE-CODE`.
 Please cite the following thesis.  If you are using `biblatex` use the `thesis` class:
 
 ```bibtex
-@thesis{VonBraunBates2010,
-  author      = {{von Braun-Bates}, Francesca},
-  title       = {Gravitational lensing of pulsars as a probe of dark matter halos},
-  type        = {Masters Thesis},
-  institution = {University of Sydney},
-  year        = {2014},
-  month       = apr,
-}
-```
-Otherwise use `misc`:
-
-```bibtex
-@misc{VonBraunBates2010,
-  author = {{von Braun-Bates}, Francesca},
-  title  = {Gravitational lensing of pulsars as a probe of dark matter halos,
-  year   = {2014},
-  note   = {Masters Thesis, University of Sydney}
-}
+@thesis{VonBraunBates2014,
+  author       = {Francesca von Braun-Bates},
+  title        = {Gravitational Lensing of Pulsars as a Probe of Dark Matter Halos},
+  type         = {Master's thesis},
+  institution  = {University of Sydney},
+  date         = {2014-04},
+  eprint       = {2210.06151},
+  eprinttype   = {arXiv},
+  eprintclass  = {astro-ph.CO},
+  url          = {https://arxiv.org/abs/2210.06151},
+}```
 ```
