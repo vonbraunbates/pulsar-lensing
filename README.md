@@ -1,6 +1,8 @@
 # pulsar-lensing
 Calculate gravitational lensing time delay on pulsar signals
 
+[![DOI](https://zenodo.org/badge/547424173.svg)](https://doi.org/10.5281/zenodo.20935838)
+
 ## Abstract
 
 Dark matter may form low-mass gravitationally bound halos within the Galaxy, but detecting such structures is difficult because dark matter interacts primarily through gravity. This thesis develops a method for detecting and characterising dark matter halos through their gravitational lensing signatures in millisecond pulsar observations.
@@ -34,5 +36,6 @@ Please cite the following thesis.  If you are using `biblatex` use the `thesis` 
   eprinttype   = {arXiv},
   eprintclass  = {astro-ph.CO},
   url          = {https://arxiv.org/abs/2210.06151},
+  doi          = {10.5281/zenodo.20935839}
 }```
 ```
